@@ -2,12 +2,13 @@ import express from 'express'
 import fs from 'fs'
 import YAML from 'yaml'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import open from 'open';
 
 const app = express()
 const port = 7070
 
-const __dirname = new URL('.', import.meta.url).pathname;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const file = fs.readFileSync(path.join(__dirname, '../dist/paystack.yaml'), 'utf8')
 const oas = YAML.parse(file)
 
