@@ -1,0 +1,4 @@
+allowBuilds:
+  '@quobix/vacuum': true
+  core-js: true
+  protobufjs: true
